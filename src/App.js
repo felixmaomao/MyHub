@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Button,Layout} from 'antd';
+import EpicPanel from './Epic/EpicPanel';
+
 import './App.css';
+
+
+const {
+  Header, Footer, Sider, Content,
+} = Layout;
 
 class App extends Component {
   render() {
+
+    var telehealthParams={
+        "env":"dev"
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App">  
+        <Layout>
+              <Header>My Hub</Header>
+              <Content>
+                 <EpicPanel telehealthParams={telehealthParams}></EpicPanel>
+              </Content>
+              <Footer>Footer</Footer>
+        </Layout>
       </div>
     );
   }
